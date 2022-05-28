@@ -1,0 +1,24 @@
+[package]
+name = "solana-accounts-filter-bench"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+anyhow = "1"
+clap = { version = "3", features = ["cargo", "derive"] }
+futures = "0.3"
+rand = "0.8"
+rand_chacha = "0.3"
+rayon = "1.5"
+serde = "1"
+serde_json = "1"
+solana-cli-config = "=1.10.17"
+solana-client = "=1.10.17"
+solana-sdk = "=1.10.17"
+solana-transaction-status = "=1.10.17"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "fs"] }
+
+[profile.release]
+codegen-units = 1
+lto = true
